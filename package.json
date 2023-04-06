@@ -1,0 +1,21 @@
+{
+  "name": "bing-wallpaper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=19.8.1",
+    "npm": ">=9.5.1"
+  },
+  "dependencies": {
+    "cron": "^2.3.0",
+    "dayjs": "^1.11.7",
+    "node-fetch": "^3.3.1"
+  }
+}
