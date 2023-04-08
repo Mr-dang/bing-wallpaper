@@ -9,13 +9,13 @@ import 'dayjs/locale/zh-cn.js';
 
 const BING_HOME_PAGE = 'https://www.bing.com';
 const IMAGE_FOLDER_PATH = '../images';
-const IMAGE_NAME = `${dayjs().format('YYYY-MM-DD')}-4k.jpeg`;
-const DIR_NAME = path.dirname(fileURLToPath(import.meta.url))
 
 const REGREX = /<link rel="preload" href="(.*)" as="image" id="preloadBg" \/>/;
 
 export default async function downLoadBingWallpaper() {
-    
+  const IMAGE_NAME = `${dayjs().format('YYYY-MM-DD')}-4k.jpeg`;
+  const DIR_NAME = path.dirname(fileURLToPath(import.meta.url))
+  
   const response = await fetch(BING_HOME_PAGE + '/', {
     headers: {
       Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
