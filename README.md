@@ -24,17 +24,15 @@ sudo apt install libnss3-dev libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 lib
 
 ## pm2 常用命令
 
-```shell
-$ pm2 list
-$ pm2 start app.js
-$ pm2 start bashscript.sh
-$ pm2 start python-app.py --watch
-$ pm2 start binary-file -- --port 1520
-$ pm2 stop <id>
-$ pm2 stop <name>
-$ pm2 delete <id>
-$ pm2 delete <name>
-```
+- `pm2 list`
+- `pm2 start app.js`
+- `pm2 start bashscript.sh`
+- `pm2 start python-app.py --watch`
+- `pm2 start binary-file -- --port 1520`
+- `pm2 stop <id>`
+- `pm2 stop <name>`
+- `pm2 delete <id>`
+- `pm2 delete <name>`
 
 CLI config
 
@@ -75,10 +73,12 @@ CLI config
 ```shell
 // 0/2 * * * * ? 表示每2秒 执行任务
 pm2 start __test__/pm2-cron-test.mjs --name pm2-cron-test --log ./logs/pm2-cron-test.log --time --cron "0/2 * * * * ?"
-```
-- puppeteer docs: https://pptr.dev
-- puppeteer apis: https://pptr.dev/api/puppeteer.puppeteernode
-- pm2 homepage: https://pm2.keymetrics.io/
-- pm2 docs: https://pm2.keymetrics.io/docs/usage/quick-start/
-
 pm2 start pm2-cron-test.mjs --name pm2-cron-tes --log ./logs --time --cron ""
+```
+
+## 参考链接
+
+- [puppeteer docs](https://pptr.dev)
+- [puppeteer apis](https://pptr.dev/api/puppeteer.puppeteernode)
+- [pm2 homepage](https://pm2.keymetrics.io/)
+- [pm2 docs](https://pm2.keymetrics.io/docs/usage/quick-start/)
