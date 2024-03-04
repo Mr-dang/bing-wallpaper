@@ -40,7 +40,7 @@ export default class BingWallpaperService {
     });
     const page = await browser.newPage();
     const userAgent = await browser.userAgent();
-    await page.setUserAgent(userAgent.replace('headless', ''));
+    await page.setUserAgent(userAgent.replace(/headless/i, ''));
     await page.setRequestInterception(true);
     const onRequest = (request) => {
       if (matched) {
