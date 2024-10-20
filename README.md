@@ -22,6 +22,23 @@ sudo apt update
 sudo apt install libnss3-dev libatk1.0-0 libatk-bridge2.0-0 libcups2 libgbm1 libpangocairo-1.0-0 libgtk-3-0
 ```
 
+## 在树莓派中使用本脚本
+
+树莓派的架构是 `arm64`，无头浏览器没有提供针对`arm64`架构的二进制文件，因此`puppeteer`调用`chrome`时会失败。
+树莓派官方为树莓派系统定制了`chrome`，可执行的应用程序位于 `/usr/bin/chromium-browser`，可以让 `puppeteer` 调用树莓派系统中安装好的 `/usr/bin/chromium-browser` 来执行程序：
+
+```javascript
+// puppeteer.config.cjs
+module.exports = {
+  // Changes the cache location for Puppeteer.
+  // cacheDirectory: join(__dirname, '.cache', 'puppeteer'),
+  executablePath: '/usr/bin/chromium-browser',
+  skipDownload: true,
+};
+```
+
+在本项目中，可切换至 `respberry-pi` 分支使用对应的代码。
+
 ## pm2 常用命令
 
 - `pm2 list`
